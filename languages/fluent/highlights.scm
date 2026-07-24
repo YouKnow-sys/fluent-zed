@@ -3,10 +3,15 @@
 (resource_comment) @comment.block
 
 (message
-  (identifier) @string.special.key)
+  (identifier) @property)
 
 (term
   (identifier) @constant)
+
+; Every standalone "-" is a term sigil: definition (-name =), reference ({ -name }),
+; or term-attribute selector ({ -name.attr -> ... }). Internal "-" live inside
+; identifier/number_literal tokens, so this should never over-matches.
+"-" @constant
 
 (attribute
   (identifier) @property.definition)
@@ -17,12 +22,19 @@
   (identifier) @variable.parameter)
 
 (message_reference
-  name: (identifier) @local.reference)
+  name: (identifier) @property)
+
+(message_reference
+  attribute: (identifier) @property)
 
 (term_reference
-  name: (identifier) @local.reference)
+  name: (identifier) @constant)
+
+(term_reference
+  attribute: (identifier) @property)
 
 (variable_reference
+  "$" @variable
   (identifier) @variable)
 
 (variant_key
@@ -31,10 +43,10 @@
 (variant_key
   (number_literal) @number)
 
-(string_literal) @string.special
+(string_literal) @string
 (number_literal) @number
 
-(text) @markup.raw
+(text) @string
 
 [
   "="
@@ -50,7 +62,6 @@
   "."
   ":"
   ","
-  "-"
 ] @punctuation.delimiter
 
 [
