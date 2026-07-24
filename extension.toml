@@ -1,0 +1,11 @@
+id = "fluent"
+name = "Fluent"
+version = "0.13.0"
+schema_version = 1
+authors = ["Saeid Ghafari <saeid.sran@gmail.com>"]
+description = "Zed Extension for fluent"
+repository = "https://github.com/YouKnow-sys/tree-sitter-fluent"
+
+[grammars.fluent]
+repository = "https://github.com/YouKnow-sys/tree-sitter-fluent"
+commit = "4ba3942d2960b8cc2cddbd8415e78523996febab"
