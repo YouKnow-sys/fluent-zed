@@ -8,4 +8,4 @@ repository = "https://github.com/YouKnow-sys/fluent-zed"
 
 [grammars.fluent]
 repository = "https://github.com/YouKnow-sys/tree-sitter-fluent"
-commit = "13fc06c7b3d4352095c7831255427f76306aa65c"
+commit = "f49b7dbb0e0d0c99e1386fa1ec1c00f8a560e4b1"

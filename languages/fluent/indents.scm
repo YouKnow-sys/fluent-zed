@@ -1,16 +1,5 @@
-(select_expression
-  (variant_list) @indent)
+(message) @indent
 
-(message
-  (attribute) @indent)
+(term) @indent
 
-(term
-  (attribute) @indent)
-
-(message
-  (pattern) @indent)
-
-(term
-  (pattern) @indent)
-
-"}" @outdent
+(select_expression) @indent
